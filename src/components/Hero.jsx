@@ -66,7 +66,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <>
+    <div className="overflow-y-hidden">
       <section id="hero" className="noisy">
         <h1 className="title">MOJITO</h1>
 
@@ -112,7 +112,7 @@ const Hero = () => {
           preload="auto"
         />
       </div>
-    </>
+    </div>
   )
 }
 
