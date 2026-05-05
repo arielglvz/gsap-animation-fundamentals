@@ -17,10 +17,14 @@ const Cocktails = () => {
         x: -100,
         y: 100,
       })
-      .from("#c-right-leaf", {
-        x: 100,
-        y: 100,
-      })
+      .from(
+        "#c-right-leaf",
+        {
+          x: 100,
+          y: 100,
+        },
+        "-=0.5", // this will make the animation start half a second before the previous one ends
+      )
   })
 
   return (
