@@ -110,7 +110,6 @@ const Hero = () => {
           muted
           playsInline
           preload="auto"
-          autoPlay
         />
       </div>
     </div>
