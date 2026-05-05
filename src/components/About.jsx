@@ -1,16 +1,18 @@
-import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { SplitText } from "gsap/all"
+import { useGSAP } from "@gsap/react"
 
 const About = () => {
   useGSAP(() => {
-    const titleSplit = SplitText.create("#about", {
+    const titleSplit = SplitText.create("#about h2", {
       type: "words",
     })
 
     const scrollTimeline = gsap.timeline({
-      trigger: "#about",
-      start: "top center",
+      scrollTrigger: {
+        trigger: "#about",
+        start: "top center",
+      },
     })
 
     scrollTimeline
@@ -21,24 +23,27 @@ const About = () => {
         ease: "expo.out",
         stagger: 0.02,
       })
-      .from(".top-grid div, .bottom-grid div", {
-        opacity: 0,
-        duration: 1,
-        yPercent: 100,
-        ease: "power1.inOut",
-        stagger: 0.04,
-      })
+      .from(
+        ".top-grid div, .bottom-grid div",
+        {
+          opacity: 0,
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.04,
+        },
+        "-=0.5",
+      )
   })
 
   return (
-    <section id="about">
-      <div className="mb-16 md:px-5">
+    <div id="about">
+      <div className="mb-16 md:px-0 px-5">
         <div className="content">
           <div className="md:col-span-8">
             <p className="badge">Best Cocktails</p>
             <h2>
-              Where every detail matters{" "}
-              <span className="text-white">from muddle to garnish</span>
+              Where every detail matters <span className="text-white">-</span>
+              from muddle to garnish
             </h2>
           </div>
 
@@ -48,6 +53,7 @@ const About = () => {
               detail — from the first muddle to the final garnish. That care is
               what turns a simple drink into something truly memorable.
             </p>
+
             <div>
               <p className="md:text-3xl text-xl font-bold">
                 <span>4.5</span>/5
@@ -88,8 +94,7 @@ const About = () => {
           <img src="/images/abt4.png" alt="grid-img-4" />
         </div>
       </div>
-    </section>
+    </div>
   )
 }
-
 export default About

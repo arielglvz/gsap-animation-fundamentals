@@ -66,7 +66,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <div className="overflow-y-hidden">
+    <div>
       <section id="hero" className="noisy">
         <h1 className="title">MOJITO</h1>
 

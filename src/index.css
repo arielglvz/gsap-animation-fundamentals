@@ -60,7 +60,7 @@ body {
   }
 
   .masked-img {
-    mask-image: url("/images/mask-img.png");
+    mask-image: url("/images/left-leaf.png");
     -webkit-mask-image: url("/images/mask-img.png");
 
     mask-repeat: no-repeat;
