@@ -78,11 +78,11 @@ body {
   /* ---------------- GLOBAL ---------------- */
 
   main {
-    @apply w-full overflow-x-hidden;
+    @apply w-full overflow-hidden;
   }
 
   video {
-    @apply w-full md:h-[80%] h-1/2 absolute bottom-0 left-0 md:object-contain object-bottom object-cover;
+    @apply w-full md:h-full h-1/2 absolute bottom-0 left-0 md:object-contain object-bottom object-cover;
   }
 
   .noisy {
@@ -255,7 +255,7 @@ body {
   /* ---------------- ART ---------------- */
 
   #art {
-    @apply flex justify-center items-center flex-col min-h-dvh p-5 mt-20 relative bg-[radial-gradient(circle_at_center,_#434343_0%,_#000_50%,_transparent_100%)];
+    @apply flex justify-center items-center flex-col min-h-dvh p-5 mt-20 relative bg-[radial-gradient(circle_at_center,#434343_0%,#000_50%,transparent_100%)];
   }
 
   #art h2 {
@@ -289,7 +289,7 @@ body {
   /* ---------------- MENU ---------------- */
 
   #menu {
-    @apply relative w-full md:mt-40 mt-0 2xl:px-0 px-5 py-20 bg-[radial-gradient(circle_at_center,_#434343_0%,_#000_50%,_transparent_100%)];
+    @apply relative w-full md:mt-40 mt-0 2xl:px-0 px-5 py-20 bg-[radial-gradient(circle_at_center,#434343_0%,#000_50%,transparent_100%)];
   }
 
   #menu #m-left-leaf {
@@ -305,7 +305,7 @@ body {
   }
 
   #menu .cocktail-tabs button {
-    @apply md:text-3xl text-xl pb-2 cursor-pointer hover:text-yellow hover:border-yellow border-b-1 transition-colors font-modern-negra;
+    @apply md:text-3xl text-xl pb-2 cursor-pointer hover:text-yellow hover:border-yellow border-b transition-colors font-modern-negra;
   }
 
   #menu .content {
@@ -359,7 +359,7 @@ body {
   /* ---------------- CONTACT ---------------- */
 
   #contact {
-    @apply relative md:mt-20 mt-0 px-4 text-center w-full overflow-hidden bg-[radial-gradient(circle_at_center,_#434343_0%,_#000_50%,_transparent_100%)];
+    @apply relative md:mt-20 mt-0 px-4 text-center w-full overflow-hidden bg-[radial-gradient(circle_at_center,#434343_0%,#000_50%,transparent_100%)];
   }
 
   #contact #f-left-leaf {
