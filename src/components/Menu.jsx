@@ -4,10 +4,13 @@ import { allCocktails } from "@/constants"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { useRef, useState } from "react"
+import { useMediaQuery } from "react-responsive"
 
 const Menu = () => {
   const contentRef = useRef()
   const [currentIndex, setCurrentIndex] = useState(0)
+
+  const isMobile = useMediaQuery({ maxWidth: 767 })
 
   useGSAP(() => {
     gsap.fromTo("#title", { opacity: 0 }, { opacity: 1, duration: 1 })
@@ -91,9 +94,8 @@ const Menu = () => {
           )
         })}
       </nav>
-
       <div className="content">
-        <div className="arrows">
+        <div className={`arrows ${isMobile ? "top-[50%] z-40" : ""}`}>
           <button
             className="text-left"
             onClick={() => gotoSlide(currentIndex - 1)}

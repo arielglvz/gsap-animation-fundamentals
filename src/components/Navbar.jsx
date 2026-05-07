@@ -1,11 +1,14 @@
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { navLinks } from "@/constants"
+import { ScrollTrigger } from "gsap/all"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Navbar = () => {
   useGSAP(() => {
     const navTween = gsap.timeline({
-      scrollTrigger: {
+      ScrollTrigger: {
         trigger: "nav",
         start: "bottom top",
       },
@@ -16,7 +19,7 @@ const Navbar = () => {
       { backgroundColor: "transparent" },
       {
         backgroundColor: "#00000050",
-        backgroundFilter: "blur(10px)",
+        backdropFilter: "blur(10px)",
         duration: 1,
         ease: "power1.inout",
       },
