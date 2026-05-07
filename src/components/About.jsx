@@ -1,8 +1,7 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
-import { ScrollTrigger, SplitText } from "gsap/all"
+import { SplitText, ScrollTrigger } from "gsap/all"
 
-// مهم: register plugins
 gsap.registerPlugin(SplitText, ScrollTrigger)
 
 const About = () => {
@@ -12,10 +11,9 @@ const About = () => {
     })
 
     const scrollTimeline = gsap.timeline({
-      ScrollTrigger: {
+      scrollTrigger: {
         trigger: "#about",
         start: "top center",
-        // toggleActions: "play none none reset",
         toggleActions: "restart none none reset",
       },
     })
