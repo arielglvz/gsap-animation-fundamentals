@@ -1,9 +1,7 @@
 import { openingHours, socials } from "@/constants"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
-import { SplitText, ScrollTrigger } from "gsap/all"
-
-gsap.registerPlugin(SplitText, ScrollTrigger)
+import { SplitText } from "gsap/all"
 
 const Contact = () => {
   useGSAP(() => {
