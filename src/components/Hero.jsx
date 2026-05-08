@@ -1,8 +1,10 @@
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
-import { SplitText } from "gsap/all"
+import { ScrollTrigger, SplitText } from "gsap/all"
 import { useRef } from "react"
 import { useMediaQuery } from "react-responsive"
+
+gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger)
 
 const Hero = () => {
   const videoRef = useRef()
@@ -59,9 +61,18 @@ const Hero = () => {
       },
     })
 
-    videoRef.current.onloadedmetadata = () => {
-      tl.to(videoRef.current, {
-        currentTime: videoRef.current.duration,
+    videoRef.current.onloadedmetadata = async () => {
+      const video = videoRef.current
+      try {
+        await video.play()
+        video.pause()
+        video.currentTime = 0
+      } catch (err) {
+        console.log("iOS video init error:", err)
+      }
+
+      tl.to(video, {
+        currentTime: video.duration,
       })
     }
   }, [])
@@ -104,12 +115,13 @@ const Hero = () => {
         </div>
       </section>
 
-      <div className="video absolute inset-0">
+      <div className="video fixed inset-0">
         <video
           ref={videoRef}
           src="/videos/output.mp4"
           muted
           playsInline
+          webkit-playsinline="true"
           preload="auto"
         />
       </div>
